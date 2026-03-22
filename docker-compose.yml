@@ -1,0 +1,15 @@
+services:
+  postgres-db:
+    image: postgres:15-alpine
+    container_name: edutech-app
+    environment:
+      - POSTGRES_USER=edutech_admin
+      - POSTGRES_PASSWORD=edutech_password
+      - POSTGRES_DB=edutech_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+      postgres_data:
+
